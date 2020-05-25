@@ -5,7 +5,7 @@ class Turn
   end
 
   def question
-    @question.text
+    "#{@player}: #{@question.text}"
   end
 
   def guess(input)
@@ -14,7 +14,7 @@ class Turn
     unless correct
       @player.lives -= 1
     end
-    
-    return correct
+    response = correct ? "YES! You are correct." : "Seriously? No!"
+    return "#{@player}: " + response
   end
 end
